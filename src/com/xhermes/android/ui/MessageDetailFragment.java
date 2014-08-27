@@ -49,7 +49,13 @@ public class MessageDetailFragment extends Fragment{
 		publisher=(TextView) root.findViewById(R.id.publisher);
 		
 		title.setText(notice.getTitle());
-		content.setText(notice.getContent());
+		
+		if(notice.getTitle().equals("警告")){
+			content.setText("您的车出现了以下方面出现了故障："+"\n"+"\n"+notice.getContent());
+		}
+		else{
+			content.setText(notice.getContent());
+		}
 		time.setText(notice.getTime());
 		publisher.setText(notice.getSender());
 		System.out.print(notice.getSender());
